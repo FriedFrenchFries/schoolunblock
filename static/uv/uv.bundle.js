@@ -38325,25 +38325,25 @@
         overridePushState() {
             this.ctx.override(this.historyProto, 'pushState', (target, that, args) => {
                 if (2 > args.length) return target.apply(that, args);
-                let [ state, title, url = '' ] = args;
+                let [ state, url = '' ] = args;
     
-                const event = new _hook_js__WEBPACK_IMPORTED_MODULE_1__["default"]({ state, title, url }, target, that);
+                const event = new _hook_js__WEBPACK_IMPORTED_MODULE_1__["default"]({ state, url }, target, that);
                 this.emit('pushState', event);
     
                 if (event.intercepted) return event.returnValue;
-                return event.target.call(event.that, event.data.state, event.data.title, event.data.url);
+                return event.target.call(event.that, event.data.state, event.data.url);
             });
         };
         overrideReplaceState() {
             this.ctx.override(this.historyProto, 'replaceState', (target, that, args) => {
                 if (2 > args.length) return target.apply(that, args);
-                let [ state, title, url = '' ] = args;
+                let [ state, url = '' ] = args;
     
-                const event = new _hook_js__WEBPACK_IMPORTED_MODULE_1__["default"]({ state, title, url }, target, that);
+                const event = new _hook_js__WEBPACK_IMPORTED_MODULE_1__["default"]({ state, url }, target, that);
                 this.emit('replaceState', event);
     
                 if (event.intercepted) return event.returnValue;
-                return event.target.call(event.that, event.data.state, event.data.title, event.data.url);
+                return event.target.call(event.that, event.data.state event.data.url);
             });
         };
         overrideGo() {
