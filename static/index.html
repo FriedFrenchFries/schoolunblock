@@ -15,7 +15,15 @@
 
 <body>
 
-    <iframe src="page.html"></iframe>
+    <frameset rows="100%,*">
+    <frame src="page.html">
+        <noframes>
+
+            <body>
+
+            </body>
+        </noframes>
+</frameset>
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
     <script src="index.js"></script>
