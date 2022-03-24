@@ -3,6 +3,7 @@ const input = document.querySelector('input');
 
 form.addEventListener('submit', async event => {
     //event.preventDefault();
+    alert("Site may not work. Sorry for any conveniences you may experience.")
     window.navigator.serviceWorker.register('./sw.js', {
         scope: __uv$config.prefix
     }).then(() => {
